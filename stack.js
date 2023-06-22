@@ -11,6 +11,10 @@ class linkedListStack{
         this.size=0;
     }
 
+    getSize(){
+        return this.size;
+    }
+
     empty(){
         return this.size===0;
     }
@@ -41,9 +45,10 @@ class linkedListStack{
             return "empty stack"
         }
         let curr=this.firstOut;
-        this.firstOut=curr.next;
-        curr.next=null;
-        return "popped"
+        this.firstOut=this.firstOut.next;
+        // curr.next=null;
+        this.size--;
+        return curr.value;
     }
 
     display(){
@@ -66,8 +71,9 @@ stack.push(1)
 stack.push(11)
 
 stack.display()
-stack.pop()
+console.log(stack.pop());
 stack.display()
-console.log("last out is ",stack.peek());
+console.log(stack.getSize());
+console.log("first out is ",stack.peek());
 
 
