@@ -8,7 +8,6 @@ class Node{
 class linkedListStack{
     constructor(){
         this.firstOut=null;
-        this.lastOut=null;
         this.size=0;
     }
 
@@ -20,7 +19,6 @@ class linkedListStack{
         let node =new Node(value);
         if(this.empty()){
             this.firstOut=node;
-            this.lastOut=node;
         }
         else {
             node.next=this.firstOut;
