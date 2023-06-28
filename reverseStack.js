@@ -19,6 +19,12 @@ class linkedListStack{
         return this.size===0;
     }
 
+    tochar(str){
+        for(let i=0; i<str.length; i++){
+           this.push(str[i])
+        }
+    }
+
     push(value){
         let node =new Node(value);
         if(this.empty()){
@@ -59,8 +65,14 @@ class linkedListStack{
         this.firstOut.next=null;
         this.firstOut=curr;
         this.size--;
-        // return curr.value;
     }
+
+    
+
+    reverse() {
+        let reversedStack = new linkedListStack();
+        reversedStack.push(this.pop())
+      }
 
 
     display(){
@@ -68,7 +80,7 @@ class linkedListStack{
         let curr=this.firstOut;
         let values='';
         while(curr){
-            values += curr.value +" ";
+            values += curr.value;
             curr=curr.next;
         }
         console.log(values)
@@ -78,14 +90,9 @@ class linkedListStack{
 }
 
 let stack= new linkedListStack ();
-stack.push(12)
-stack.push(1)
-stack.push(11)
-
-stack.display()
-console.log(stack.pop());
+let str="Hello how are you"
+stack.tochar(str)
 stack.display()
 console.log(stack.getSize());
-console.log("first out is ",stack.peek());
 
 
